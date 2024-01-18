@@ -1,0 +1,34 @@
+to_do_list = []
+
+while True:
+    add = input("Input what you need to add for the to-do list (type 'exit' to stop): ").strip()
+
+    if add.lower() == 'exit':
+        break
+    
+    to_do_list.append(add)
+    print(f"{add} added to the to-do list.")
+    print("Current To-Do List:", to_do_list)
+    
+    extra = input("Type 'add' to add something to the list, 'remove' to remove something, or 'exit' to stop: ").strip()
+
+    if extra.lower() == 'exit':
+        break
+
+    if extra == "add":
+        do = input("Input what to add: ")
+        to_do_list.append(do)
+        print(f"{do} added to the to-do list.")
+    elif extra == "remove":
+        dont = input("Input what to remove: ")
+        if dont in to_do_list:
+            to_do_list.remove(dont)
+            print(f"{dont} removed from the to-do list.")
+        else:
+            print(f"{dont} not found in the to-do list.")
+    else:
+        print("Invalid input. Please type 'add', 'remove', or 'exit.")
+    
+    print("Current To-Do List:", to_do_list)
+
+print("Exiting the to-do list program. Final To-Do List:", to_do_list)
